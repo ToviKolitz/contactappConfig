@@ -1,0 +1,19 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: echo-dev
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: semver:~1.0
+spec:
+  releaseName: echo-dev
+  chart:
+    git: git@github.com:ToviKolitz/contactappConfig.git
+    path: charts/contacts
+    ref: master
+  values:
+    image:
+      repository: 569254250209.dkr.ecr.us-east-2.amazonaws.com/contactapp
+      tag: 1.0.30

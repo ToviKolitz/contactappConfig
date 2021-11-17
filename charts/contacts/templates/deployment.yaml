@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.lable }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.lable }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.lable }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          envFrom:
+          - configMapRef:
+              name: {{ .Values.configMap.configMapName }}
+          - secretRef:
+              name: {{ .Values.secret.secretName }}
+          ports:
+            - containerPort: {{ .Values.deployment.appPort }}

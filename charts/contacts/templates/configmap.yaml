@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMap.configMapName }}
+data:
+  APP_ENV: "{{ .Values.configMap.appenv }}"
+  APP_DEBUG: "{{ .Values.configMap.appdebug }}"
+  APP_PORT: "{{ .Values.configMap.appport }}"

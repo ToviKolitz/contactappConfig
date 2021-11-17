@@ -1,0 +1,34 @@
+deployment:
+  lable: contactsapp
+  appPort: "5000"
+  #mongourlkey: MONGODBURL
+image: 
+  repository: 569254250209.dkr.ecr.us-east-2.amazonaws.com/contactapp
+  tag: "1.0.30"
+replicaCount: 2
+service:
+  serviceName: contactsservice
+  type: ClusterIP
+  port: "5000"
+ingress:
+  path: "/"
+  pathType: Prefix
+  host: contactsapp.tk
+configMap:
+  configMapName: contactsconfig
+  appenv: "test"
+  appdebug: "True"
+  appport: "5000"
+# issuer:
+#   issuerName: letsencrypt-prod2
+secret:
+  secretName: contactssecret
+  dbname: Y29udGFjdGRi
+  user: YWRtaW4=
+  password: cGFzc3dvcmQ=
+  host: Y29udGFjdHMtbW9uZ29kYi0wLmNvbnRhY3RzLW1vbmdvZGItaGVhZGxlc3MuZGVmYXVsdC5zdmMuY2x1c3Rlci5sb2NhbA==
+  suffix: YXV0aFNvdXJjZT1jb250YWN0ZGI=
+  secretkey: dGVzdA==
+
+
+
