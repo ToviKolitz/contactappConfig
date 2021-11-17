@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: echo-dev
+  name: contactsapp
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
