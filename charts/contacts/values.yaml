@@ -14,13 +14,14 @@ ingress:
   path: "/"
   pathType: Prefix
   host: contactsapp.tk
+  secretName: contactscert
 configMap:
   configMapName: contactsconfig
   appenv: "test"
   appdebug: "True"
   appport: "5000"
-# issuer:
-#   issuerName: letsencrypt-prod2
+issuer:
+  issuerName: letsencrypt-prod2
 secret:
   secretName: contactssecret
   dbname: Y29udGFjdGRi
