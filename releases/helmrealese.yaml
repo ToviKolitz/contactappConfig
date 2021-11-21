@@ -16,4 +16,4 @@ spec:
   values:
     image:
       repository: 006262944085.dkr.ecr.us-east-2.amazonaws.com/contactapp
-      tag: 1.0.38
+      tag: 1.0.39
