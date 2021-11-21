@@ -15,5 +15,5 @@ spec:
     ref: master
   values:
     image:
-      repository: 569254250209.dkr.ecr.us-east-2.amazonaws.com/contactapp
-      tag: 1.0.34
+      repository: 006262944085.dkr.ecr.us-east-2.amazonaws.com/contactapp
+      tag: 1.0.31
